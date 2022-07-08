@@ -6,16 +6,16 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { CssBaseline } from "@mui/material";
 
 // Change this value for the speed of the animations.
-const ANIMATION_SPEED_MS = 1;
+const ANIMATION_SPEED_MS = 2;
 
 // Change this value for the number of bars (value) in the array.
 const NUMBER_OF_ARRAY_BARS = 250;
 
 // This is the main color of the array bars.
-const PRIMARY_COLOR = "turquoise";
+const PRIMARY_COLOR = "#69f0ae";
 
 // This is the color of array bars that are being compared throughout the animations.
-const SECONDARY_COLOR = "red";
+const SECONDARY_COLOR = "black";
 
 const darkTheme = createTheme({
   palette: {
@@ -34,7 +34,7 @@ function App() {
   function resetArray() {
     const arr = [];
     for (let i = 0; i < NUMBER_OF_ARRAY_BARS; i++) {
-      arr.push(randomValue(10, 300));
+      arr.push(randomValue(10, 450));
     }
 
     setBars(arr);
@@ -75,7 +75,7 @@ function App() {
           onCreate={resetArray}
         />
 
-        <main className="p-16 w-full shadow-md flex justify-center items-center flex-col">
+        <main className="w-full flex justify-center items-center flex-col">
           <div className="flex">
             {bars.map((value, idx) => (
               <div
